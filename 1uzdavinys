@@ -1,0 +1,41 @@
+# Python faile padaryti šiuos veiksmus (atskirai, ne iškart):
+# • Importuoti modulį datetime. Atsispausdinti šiandienos datą ir laiką kartu, tik datą (date.today()) bei tik laiką
+# (.now().time()).
+# • Iš paketo datetime importuoti modulį date. Atsispausdinti šiandienos datą.
+# • Iš paketo datetime importuoti modulį date kaip data (as data). Atsispausdinti šiandienos datą.
+
+import datetime
+from datetime import time
+from datetime import date as data
+x = datetime.datetime.now()
+print(f"siuos dienos data ir laikas:{x}")
+print(f"tik sie metai:{x.year}")
+print(f'tik savaites diena angliskai:{x.strftime("%A")}')
+today = data.today()
+print(f"Siuo dienos data formatu(mmmm-mm-dd):{today}")
+print("..........break.............")
+x = datetime.datetime.now().time()
+print(f"dabartinis laikas(hh:mm:ss):{x}")
+print(f'tik valandos ir minutes:{x.strftime("%H:%m")}')
+print("..........break.............")
+x = time(11,34,56,44)
+print("valandos =", x.hour)
+print("minutes =", x.minute)
+print("sekundes =", x.second)
+print("mikrosekundes =", x.microsecond)
+
+#output
+siuos dienos data ir laikas:2023-01-01 19:15:04.909968
+tik sie metai:2023
+tik savaites diena angliskai:Sunday
+Siuo dienos data formatu(mmmm-mm-dd):2023-01-01
+..........break.............
+dabartinis laikas(hh:mm:ss):19:15:04.909968
+tik valandos ir minutes:19:01
+..........break.............
+valandos = 11
+minutes = 34
+sekundes = 56
+mikrosekundes = 44
+
+Process finished with exit code 0
